@@ -1,0 +1,36 @@
+﻿<Window x:Class="demo16._06.Windows.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:demo16._06.Windows"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="list1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,214,0" SelectionChanged="list1_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding Firstname}" Width="100"/>
+                    <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding Lastname}" Width="100"/>
+                    <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding Middlename}" Width="100"/>
+                    <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding Status}" Width="100"/>
+                    <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Role}" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btn1" Content="Список сотрудников" HorizontalAlignment="Left" Margin="622,210,0,0" VerticalAlignment="Top" Height="33" Width="129" Click="Button_Click"/>
+        <Button x:Name="btn2" Content="Изменить статус" HorizontalAlignment="Left" Margin="622,249,0,0" VerticalAlignment="Top" Height="30" Width="129" Click="btn2_Click"/>
+        <Button x:Name="btn3" Content="Показать заказы" HorizontalAlignment="Left" Height="32" Margin="622,285,0,0" VerticalAlignment="Top" Width="129" Click="btn3_Click"/>
+        <Button x:Name="btn4" Content="Создать сотрудника" HorizontalAlignment="Left" Margin="622,166,0,0" VerticalAlignment="Top" Height="38" Width="129" Click="btn4_Click"/>
+        <TextBox x:Name="txtfirst" HorizontalAlignment="Left" Margin="622,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Height="34"/>
+        <TextBox x:Name="txtlast" HorizontalAlignment="Left" Margin="622,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Height="34"/>
+        <TextBox x:Name="txtmiddle" HorizontalAlignment="Left" Margin="622,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Height="34"/>
+        <Button x:Name="btn5" Content="Показать смены" HorizontalAlignment="Left" Margin="622,322,0,0" VerticalAlignment="Top" Height="38" Width="129" Click="btn5_Click"/>
+        <ComboBox x:Name="combrole" HorizontalAlignment="Left" Margin="622,127,0,0" VerticalAlignment="Top" Width="129" Height="34">
+            <ComboBoxItem Content="Администратор"/>
+            <ComboBoxItem Content="Переводчик"/>
+            <ComboBoxItem Content="Менеджер"/>
+        </ComboBox>
+
+    </Grid>
+</Window>

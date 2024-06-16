@@ -1,0 +1,24 @@
+﻿<Window x:Class="demo16._06.Windows.TranslatorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:demo16._06.Windows"
+        mc:Ignorable="d"
+        Title="TranslatorWindow" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="listt1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,10,126,10" SelectionChanged="listt1_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Дата создания" DisplayMemberBinding="{Binding datecreation}" Width="100"/>
+                    <GridViewColumn Header="Статус заказа" DisplayMemberBinding="{Binding orderstatus}" Width="100"/>
+                    <GridViewColumn Header="Статус платежа" DisplayMemberBinding="{Binding paymentstatus}" Width="100"/>
+                    <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding addres}" Width="150"/>
+                    <GridViewColumn Header="Метод платежа" DisplayMemberBinding="{Binding paymentmethod}" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnstatus" Content="Статус заказа" HorizontalAlignment="Left" Margin="679,46,0,0" VerticalAlignment="Top" Height="53" Width="111" Click="btnstatus_Click"/>
+
+    </Grid>
+</Window>

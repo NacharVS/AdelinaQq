@@ -1,0 +1,33 @@
+﻿<Window x:Class="demo16._06.Windows.ManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:demo16._06.Windows"
+        mc:Ignorable="d"
+        Title="ManagerWindow" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="listt2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,178,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Дата создания" DisplayMemberBinding="{Binding datecreation}" Width="100"/>
+                    <GridViewColumn Header="Статус заказа" DisplayMemberBinding="{Binding orderstatus}" Width="100"/>
+                    <GridViewColumn Header="Статус платежа" DisplayMemberBinding="{Binding paymentstatus}" Width="100"/>
+                    <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding addres}" Width="150"/>
+                    <GridViewColumn Header="Метод платежа" DisplayMemberBinding="{Binding paymentmethod}" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="txtaddres" HorizontalAlignment="Left" Margin="1469,723,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="28" TextChanged="txtaddres_TextChanged"/>
+        <Button Content="Создать" HorizontalAlignment="Left" Margin="650,109,0,0" VerticalAlignment="Top" Height="37" Width="140" Click="Button_Click"/>
+        <ComboBox x:Name="paystat" HorizontalAlignment="Left" Margin="650,10,0,0" VerticalAlignment="Top" Width="151" Height="28">
+            <ComboBoxItem Content="оплачен"/>
+            <ComboBoxItem Content="принят"/>
+        </ComboBox>
+        <ComboBox x:Name="paymet" HorizontalAlignment="Left" Margin="650,76,0,0" VerticalAlignment="Top" Width="151" Height="28">
+            <ComboBoxItem Content="ипотека"/>
+            <ComboBoxItem Content="наличные"/>
+        </ComboBox>
+
+    </Grid>
+</Window>
